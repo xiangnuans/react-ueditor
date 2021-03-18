@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "baseUrl": "",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["ES6", "DOM"],
+    "sourceMap": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "build", "dist"]
+}
