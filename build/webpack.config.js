@@ -1,10 +1,11 @@
 const path = require("path");
+
 module.exports = {
   entry: {
-    index: "./lib/index.tsx",
+    index: path.resolve(__dirname, "../lib/index.tsx"),
   },
   output: {
-    path: path.resolve(__dirname, "dist/lib"),
+    path: path.resolve(__dirname, "../dist/lib"),
     library: "YUI",
     libraryTarget: "umd",
   },
@@ -15,7 +16,18 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
+        use: [
+          {
+            loader: "ts-loader",
+          },
+          {
+            loader: "eslint-loader",
+            options: {
+              formatter: require("eslint-friendly-formatter"),
+              emitWarning: false,
+            },
+          },
+        ],
       },
     ],
   },
